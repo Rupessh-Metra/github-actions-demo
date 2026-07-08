@@ -21,5 +21,8 @@ jobs:
       # Step 3: Install dependencies
       - run: pip install -r requirements.txt
 
+      - run: pwd
+
+      - run: ls -la
       # Step 4: Run tests
       - run: pytest
