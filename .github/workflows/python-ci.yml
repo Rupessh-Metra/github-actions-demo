@@ -35,3 +35,6 @@ jobs:
 
       - name: Execute Unit Tests
         run: pytest
+      
+      - name: Print Secret
+        run: echo ${{ secrets.MY_NAME }}
