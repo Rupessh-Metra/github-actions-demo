@@ -38,3 +38,16 @@ jobs:
       
       - name: Print Secret
         run: echo ${{ secrets.MY_NAME }}
+
+      - name: Generate Build Report
+        run: |
+          echo "Project: GitHub Actions Demo" > report.txt
+          echo "Build Status: SUCCESS" >> report.txt
+          echo "Python Version:" >> report.txt
+          python --version >> report.txt
+
+      - name: Upload Build Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          path: report.txt
